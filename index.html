@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ADITMARKET — Top Up Diamond</title>
+  <meta name="description" content="ADITMARKET: Top up diamond Free Fire & Mobile Legends cepat dan aman. Pemesanan via WhatsApp." />
+  <style>
+    :root {
+      --accent:#f86ce1; --accent-2:#44ff33; --muted:#d1dae6;
+      font-family: 'Poppins', sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      color:white;
+      background-size:cover;
+      background-position:center;
+      background-attachment:fixed;
+    }
+    body::before{
+      content:"";
+      position:fixed;top:0;left:0;width:100%;height:100%;
+      background:rgba(0,0,0,0.65);
+      z-index:-1;
+    }
+    header{
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      text-align:center;padding:32px 16px;
+    }
+    header .logo{
+      width:90px;height:90px;border-radius:50%;
+      background:radial-gradient(circle,var(--accent),var(--accent-2));
+      display:flex;align-items:center;justify-content:center;
+      font-size:28px;font-weight:900;color:#222;
+      box-shadow:0 8px 24px rgba(0,0,0,0.4);
+      margin-bottom:12px;
+    }
+    header h1{font-size:28px;letter-spacing:1px}
+    header p{color:var(--muted);margin-top:6px;font-size:14px;max-width:400px}
+
+    main{display:grid;grid-template-columns:280px 1fr;gap:20px;max-width:1200px;margin:0 auto;padding:20px}
+    nav{
+      background:rgba(255,255,255,0.06);
+      border-radius:16px;padding:20px;box-shadow:0 6px 20px rgba(0,0,0,0.3);
+      display:flex;flex-direction:column;gap:18px;align-self:start;
+    }
+    nav h2{font-size:18px;margin-bottom:6px;color:var(--accent)}
+    nav ul{list-style:none;padding-left:12px;font-size:14px;color:var(--muted)}
+    nav li{margin:6px 0}
+
+    .packages{
+      display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px;
+    }
+    .pkg{
+      background:rgba(255,255,255,0.08);
+      padding:18px;border-radius:16px;
+      transition:.3s transform,.3s box-shadow;
+    }
+    .pkg:hover{transform:translateY(-8px) rotate(-1deg);box-shadow:0 16px 32px rgba(0,0,0,0.5)}
+    .pkg h3{margin:0;font-size:18px;color:var(--accent)}
+    .pkg p{margin:6px 0;color:var(--muted);font-size:13px}
+    .pkg .price{margin-top:8px;font-weight:800;font-size:18px}
+    .pkg a{
+      display:inline-block;margin-top:12px;padding:10px 14px;
+      border-radius:12px;background:var(--accent);
+      color:#222;text-decoration:none;font-weight:700;
+    }
+
+    .highlight{
+      grid-column:1/-1;position:relative;overflow:hidden;
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      color:#222;padding:20px;border-radius:18px;
+      font-weight:700;font-size:16px;text-align:center;
+      animation:shine 6s linear infinite;
+    }
+    @keyframes shine{
+      from{background-position:0 0} to{background-position:200% 0}
+    }
+
+    footer{margin-top:40px;padding:20px;text-align:center;font-size:13px;color:var(--muted)}
+
+    @media(max-width:900px){main{grid-template-columns:1fr}} 
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">AM</div>
+    <h1>ADITMARKET</h1>
+    <p>Top up diamond Free Fire & Mobile Legends — cepat, aman, dan pemesanan via WhatsApp</p>
+    <p style="margin-top:8px;font-weight:700;color:var(--accent)">WA: +62 896-5285-3591</p>
+  </header>
+
+  <main>
+    <nav>
+      <h2>Metode Pembayaran</h2>
+      <ul>
+        <li>Transfer Bank (BCA, BRI, Mandiri)</li>
+        <li>E-Wallet (Dana, OVO, GoPay, ShopeePay)</li>
+        <li>Pulsa (Telkomsel, Indosat)</li>
+      </ul>
+      <a href="#" onclick="openWA()" style="margin-top:12px;display:block;padding:10px 12px;border-radius:10px;background:linear-gradient(90deg,#25D366,#128C7E);color:white;text-align:center;font-weight:800;text-decoration:none">Chat via WhatsApp</a>
+    </nav>
+
+    <section>
+      <div class="highlight">🔥 Promo Spesial: Cashback 5% untuk pembelian di atas Rp 200.000 🔥</div>
+
+      <div class="packages" id="priceGrid">
+        <div class="pkg" data-game="ff">
+          <h3>FF — 50 Diamond</h3>
+          <p>Paket kecil cepat diproses</p>
+          <div class="price">Rp 8.500</div>
+          <a href="#" onclick="order('Free Fire','50')">Order</a>
+        </div>
+        <div class="pkg" data-game="ff">
+          <h3>FF — 140 Diamond</h3>
+          <p>Paket populer</p>
+          <div class="price">Rp 22.000</div>
+          <a href="#" onclick="order('Free Fire','140')">Order</a>
+        </div>
+        <div class="pkg" data-game="ff">
+          <h3>FF — 355 Diamond</h3>
+          <p>Paket besar hemat</p>
+          <div class="price">Rp 50.000</div>
+          <a href="#" onclick="order('Free Fire','355')">Order</a>
+        </div>
+        <div class="pkg" data-game="ml">
+          <h3>ML — 12 Diamond</h3>
+          <p>Paket coba-coba</p>
+          <div class="price">Rp 6.500</div>
+          <a href="#" onclick="order('Mobile Legends','12')">Order</a>
+        </div>
+        <div class="pkg" data-game="ml">
+          <h3>ML — 50 Diamond</h3>
+          <p>Paket hemat hadiah</p>
+          <div class="price">Rp 20.000</div>
+          <a href="#" onclick="order('Mobile Legends','50')">Order</a>
+        </div>
+        <div class="pkg" data-game="ml">
+          <h3>ML — 280 Diamond</h3>
+          <p>Paket top up besar</p>
+          <div class="price">Rp 105.000</div>
+          <a href="#" onclick="order('Mobile Legends','280')">Order</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> ADITMARKET — Semua hak dilindungi.
+  </footer>
+
+  <script>
+    document.getElementById('year').innerText = new Date().getFullYear();
+    const WA_NUMBER = '6289652853591';
+
+    function setBackground(game){
+      let url = '';
+      if(game==='ff'){
+        url = 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.cnbcindonesia.com%2Ftech%2F20220818112014-37-364684%2F200-nama-ff-keren-terbaru-agustus-2022-pamerkan-saat-mabar&psig=AOvVaw3-C0-xdghYv8cL4ZFH01jz&ust=1758873424233000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCODzsaG4848DFQAAAAAdAAAAABAE';
+      } else if(game==='ml'){
+        url = 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.veinstore.id%2Fid-id%2Fmobile-legends&psig=AOvVaw37iF8tZHM4JpV3SRhwNvy4&ust=1758873482161000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCPi9nLu4848DFQAAAAAdAAAAABAE';
+      } else {
+        url = 'https://i.ibb.co/pWDPcVq/bg-gaming.jpg';
+      }
+      document.body.style.backgroundImage = `url(${url})`;
+    }
+
+    function openWA(){
+      const text = encodeURIComponent('Halo ADITMARKET, saya ingin order top up. Mohon info paket dan cara pembayaran.');
+      window.open(`https://wa.me/${WA_NUMBER}?text=${text}`,'_blank');
+    }
+    function order(game, amount){
+      const id = prompt('Masukkan ID Game:');
+      if(!id) return;
+      const server = prompt('Masukkan Server (jika ada):');
+      const msg = `Halo ADITMARKET (ORDER)%0AGame: ${encodeURIComponent(game)}%0APaket: ${encodeURIComponent(amount)} diamond%0AID: ${encodeURIComponent(id)}%0AServer: ${encodeURIComponent(server||'-')}%0AMohon konfirmasi harga dan pembayaran.`;
+      window.open(`https://wa.me/${WA_NUMBER}?text=${msg}`,'_blank');
+      setBackground(game.toLowerCase().includes('fire') ? 'ff' : 'ml');
+    }
+
+    // default background
+    setBackground();
+  </script>
+</body>
+</html>
